@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: 'Motiva Sans', Arial, sans-serif;
+            width: 320px;
+            padding: 15px;
+            background: #171a21;
+            color: #c6d4df;
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #2a475e;
+            padding-bottom: 10px;
+        }
+
+        #list {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 5px;
+        }
+
+        /* Кастомный скроллбар */
+        #list::-webkit-scrollbar { width: 6px; }
+        #list::-webkit-scrollbar-thumb { background: #3a4a5a; border-radius: 3px; }
+
+        .item {
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 3px;
+            border-left: 3px solid #66c0f4;
+            font-size: 13px;
+        }
+
+        .item-title {
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .item-id {
+            color: #8f98a0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .row { display: flex; gap: 10px; }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        button:hover { opacity: 0.8; }
+
+        #exportBtn { background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%); }
+        #copyBtn { background: #5c7e10; }
+        #clearBtn { background: #a93226; }
+    </style>
+</head>
+<body>
+
+<h2>WorkshopDL Queue</h2>
+
+<div id="list"></div>
+
+<div class="button-group">
+    <button id="exportBtn">Export TXT</button>
+    <div class="row">
+        <button id="copyBtn">Copy IDs</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+</div>
+
+<script src="popup.js"></script>
+
+</body>
+</html>
