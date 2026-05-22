@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "WorkshopDL Helper",
+  "version": "1.0",
+  "description": "Collect Steam Workshop IDs for WorkshopDL",
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://steamcommunity.com/*"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "WorkshopDL Helper"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://steamcommunity.com/sharedfiles/filedetails/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
